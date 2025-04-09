@@ -23,12 +23,13 @@ def validate_trading_data(df, calendar_name="NYSE", date_col="date", ticker_col=
 
     return missing_dates_by_ticker
 
+tickers = ["IBM", "AAPL", "MSFT", "AMZN", "GOOGL", "XOM", "JPM", "PFE", "CAT", "WMT"]
+for ticker in tickers :
+    df = pd.read_csv(f"../../data/blueChips/{ticker}.csv", parse_dates=["datetime"])
+    df["ticker"] = "IBM"
+    missing_dates = validate_trading_data(df, date_col = "datetime")
 
-df = pd.read_csv("../../data/blueChips/IBM.csv", parse_dates=["datetime"])
-df["ticker"] = "IBM"
-missing_dates = validate_trading_data(df, date_col = "datetime")
-
-if not missing_dates:
-    print("✅ Aucune date manquante détectée !")
-for ticker, dates in missing_dates.items():
-    print(f"\n{ticker} is missing {len(dates)} trading days:")
+    if not missing_dates:
+        print(f"✅ No missing dates for {ticker}")
+    for ticker, dates in missing_dates.items():
+        print(f"\n{ticker} is missing {len(dates)} trading days:")
