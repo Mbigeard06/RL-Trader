@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+gym
+scikit-learn
+stable-baselines3
+torch
+EOF

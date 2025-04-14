@@ -25,7 +25,7 @@ def validate_trading_data(df, calendar_name="NYSE", date_col="date", ticker_col=
 
 tickers = ["IBM", "AAPL", "MSFT", "AMZN", "GOOGL", "XOM", "JPM", "PFE", "CAT", "WMT"]
 for ticker in tickers :
-    df = pd.read_csv(f"../../data/blueChips/{ticker}.csv", parse_dates=["datetime"])
+    df = pd.read_csv(f"data/blueChips/{ticker}.csv", parse_dates=["datetime"])
     df["ticker"] = "IBM"
     missing_dates = validate_trading_data(df, date_col = "datetime")
 

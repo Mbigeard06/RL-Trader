@@ -1,0 +1,21 @@
+[project]
+name = "rl-trader"
+version = "0.1.0"
+description = "An RL-based crypto trading bot"
+authors = [{name="Mateo Bigeard Dasen"}]
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "gym",
+    "scikit-learn",
+    "stable-baselines3",
+    "torch",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

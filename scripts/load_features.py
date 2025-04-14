@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-from process_features import compute_features
+from rl_trader.data_loader.process_features import compute_features
 
 def load_features(input, output):
     input_dir = Path(input)
@@ -19,4 +19,4 @@ def load_features(input, output):
         except Exception as e:
             print(f"❌ Failed on {ticker}: {e}")
 
-load_features("../../data/blueChips", "../../data/features/blueChips" )
+load_features("data/blueChips", "data/features/blueChips" )

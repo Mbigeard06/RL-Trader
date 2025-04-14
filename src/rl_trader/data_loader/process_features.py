@@ -119,7 +119,3 @@ def compute_features(df):
         'overnight_return': overnight
     }).dropna().reset_index(drop=True)
 
-# --- Example usage ---
-data = pd.read_csv("../../data/blueChips/AAPL.csv")
-features = compute_features(data)
-print(features.head())
